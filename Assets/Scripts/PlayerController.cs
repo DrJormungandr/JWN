@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool isOnGound = true;
+    private bool isOnGround = true;
     public float speed = 20;
     public float jumpForce = 3;
     private float horizontalInput;
@@ -24,44 +24,46 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal") * speed;
         transform.Translate(Vector2.right * Time.deltaTime * horizontalInput);
-       // playerDirection(horizontalInput);
+        playerDirection(horizontalInput);
         jump();
         
     }
 
-  /*  private void playerDirection(float direction)
+   private void playerDirection(float direction)
     {
         
         if (direction < 0)
         {
             playerAnim.SetBool("isRunning", true);
-            playerSprite.flipX = true;
+            playerSprite.flipX = false;
         }
         else if (direction > 0)
         {
             playerAnim.SetBool("isRunning", true);
-            playerSprite.flipX = false;
+            playerSprite.flipX = true;
         }
         else
         {
             playerAnim.SetBool("isRunning", false);
         }
-    } */
+    } 
 
     private void jump()
     {
-        if (Input.GetButtonDown("Jump") && isOnGound)
+        if (Input.GetButtonDown("Jump") && isOnGround)
         {
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            isOnGound = false;
+            isOnGround = false;
+            playerAnim.SetTrigger("jumpAction");
         }
+      
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isOnGound = true;
+            isOnGround = true;
         }
     }
 }
