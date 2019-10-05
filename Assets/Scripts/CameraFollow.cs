@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     // Start is called before the first frame update
     private GameObject Player;
-    public float cameraZoom = 100;
+    public float cameraZoom = 60;
     private Vector3 offset;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,10 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = (Player.transform.position - offset);
+        if (Player != null)
+        {
+            transform.position = (Player.transform.position - offset);
+        }
 
     }
 }
