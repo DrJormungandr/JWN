@@ -17,7 +17,7 @@ public class DeleteOnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,6 +37,6 @@ public class DeleteOnClick : MonoBehaviour
                 tilemap.SetTile(tilemap.WorldToCell(hitPosition), null);
             }
         }
-        Destroy(gameObject);
+        
     }
 }

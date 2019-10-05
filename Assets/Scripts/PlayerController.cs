@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer playerSprite;
     private Rigidbody2D playerRb;
     private Animator playerAnim;
+    private bool LooksRight;
     public GameObject nothingAttackPrefab;
+    public GameObject hurtbox;
+    public Vector3 offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,8 @@ public class PlayerController : MonoBehaviour
         playerDirection(horizontalInput);
         jump();
         RightClickOfDeath();
-        
+        CloseCombat();
+        Debug.Log(offset.ToString());
     }
 
    private void playerDirection(float direction)
@@ -37,12 +41,12 @@ public class PlayerController : MonoBehaviour
         if (direction < 0)
         {
             playerAnim.SetBool("isRunning", true);
-            playerSprite.flipX = false;
+            SetDirection(false);
         }
         else if (direction > 0)
         {
             playerAnim.SetBool("isRunning", true);
-            playerSprite.flipX = true;
+            SetDirection(true);
         }
         else
         {
@@ -72,11 +76,48 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void CloseCombat()
+    {
+        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            offset = new Vector3(2, -0.2F, 0);
+            if (LooksRight)
+            {
+                offset.x *= -1;
+            }
+            else
+            {
+                offset.x = Mathf.Abs(offset.x);
+            }
+
+            offset = gameObject.transform.position - offset;
+
+            Instantiate(hurtbox, (offset), gameObject.transform.rotation);
+
+           // playerAnim.SetTrigger("");
+        }
+    }
+  
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+        }
+    }
+
+    private void SetDirection(bool right)
+    {
+        if (right)
+        {
+            playerSprite.flipX = true;
+            LooksRight = true;
+        }
+        else
+        {
+            playerSprite.flipX = false;
+            LooksRight = false;
         }
     }
 }
