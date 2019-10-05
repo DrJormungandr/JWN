@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: nothing 3
+  m_Name: StoneFloorTexture good 2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 13802ebaa255c5c4eaa85d3d7df9582d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72f33abcd9f68b642823d68f53ea8764, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
