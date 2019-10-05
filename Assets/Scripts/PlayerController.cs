@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
             offset = gameObject.transform.position - offset;
 
             Instantiate(hurtbox, (offset), gameObject.transform.rotation);
+            playerAnim.SetTrigger("attackAction");
 
            // playerAnim.SetTrigger("");
         }
