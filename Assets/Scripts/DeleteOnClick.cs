@@ -37,5 +37,6 @@ public class DeleteOnClick : MonoBehaviour
                 tilemap.SetTile(tilemap.WorldToCell(hitPosition), null);
             }
         }
+        Destroy(gameObject);
     }
 }
