@@ -21,7 +21,6 @@ public class DeleteOnClick : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.LogWarning(collision.gameObject.GetComponent<Tilemap>().ToString());
         if (collision.gameObject.GetComponent<Tilemap>() == null)
         {
             Destroy(collision.gameObject);

@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
         jump();
         RightClickOfDeath();
         CloseCombat();
-        Debug.Log(offset.ToString());
     }
 
    private void playerDirection(float direction)
