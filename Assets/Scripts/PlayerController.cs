@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             Instantiate(nothingAttackPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), nothingAttackPrefab.transform.rotation);
-            Debug.Log(Input.mousePosition.ToString());
         }
     }
 
