@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer playerSprite;
     private Rigidbody2D playerRb;
     private Animator playerAnim;
+    public GameObject nothingAttackPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector2.right * Time.deltaTime * horizontalInput);
         playerDirection(horizontalInput);
         jump();
+        RightClickOfDeath();
         
     }
 
@@ -57,6 +59,17 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetTrigger("jumpAction");
         }
       
+    }
+
+    private void RightClickOfDeath()
+    {
+
+    //    Camera.main.ScreenToWorldPoint()
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Instantiate(nothingAttackPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), nothingAttackPrefab.transform.rotation);
+            Debug.Log(Input.mousePosition.ToString());
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
