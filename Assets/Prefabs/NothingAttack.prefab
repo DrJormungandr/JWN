@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26dfe4e06959a540a09109c5f1c5163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialVelocity: {x: 1, y: 10}
+  initialVelocity: {x: 4, y: 4}
   nothingTile: {fileID: 11400000, guid: cbf8a0ecb36df824b9edf1308bff261e, type: 2}
 --- !u!50 &3881985830495631263
 Rigidbody2D:

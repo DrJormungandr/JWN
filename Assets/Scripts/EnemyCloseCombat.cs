@@ -28,8 +28,8 @@ public class EnemyCloseCombat : MonoBehaviour
         {
             otherRb = collision.gameObject.GetComponent<Rigidbody2D>();
             otherRb.AddForce(new Vector2(20, 25), ForceMode2D.Impulse);
-            EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-            enemyHealth.health -= damage;
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            playerHealth.health -= damage;
 
         }
     }
