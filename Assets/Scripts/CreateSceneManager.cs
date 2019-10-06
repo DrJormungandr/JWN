@@ -25,7 +25,8 @@ public class CreateSceneManager : MonoBehaviour
         }
         if (gameOver)
         {
-            //INSERT HERE
+            
+            Application.LoadLevel(Application.loadedLevel);
         }
 
         if (winGame)
