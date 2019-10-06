@@ -32,7 +32,7 @@ public class EnemyKnightGeniusAI : MonoBehaviour
     private void PlayerSight()
     {
         Debug.Log(distanceFromPlayer.ToString());
-        Vector3 awayFromPlayer = new Vector3(transform.position.x + player.transform.position.x, transform.position.y);
+        Vector3 awayFromPlayer = new Vector3(transform.position.x + player.transform.position.x, 0);
         if (distanceFromPlayer < sightDistance)
         {
             transform.Translate(awayFromPlayer * Time.deltaTime * 2);
