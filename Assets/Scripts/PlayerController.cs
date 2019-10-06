@@ -72,10 +72,10 @@ public class PlayerController : MonoBehaviour
 
     private void jump()
     {
-        playAudio.PlayOneShot(jumpSound);
 
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
+            playAudio.PlayOneShot(jumpSound);
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("jumpAction");
@@ -159,7 +159,10 @@ public class PlayerController : MonoBehaviour
     }
     public void CheckGotDamaged()
     {
-        playAudio.PlayOneShot(maslinuPoymalSound);
+        if (gotDamaged == true)
+        {
+            playAudio.PlayOneShot(maslinuPoymalSound);
+        }
         gotDamaged = false;
     }
 }
