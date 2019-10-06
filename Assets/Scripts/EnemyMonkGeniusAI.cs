@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyMonkGeniusAI : MonoBehaviour
 {
     GameObject player;
@@ -9,11 +10,14 @@ public class EnemyMonkGeniusAI : MonoBehaviour
     SpriteRenderer monkSprite;
     public float speed = 3;
     public float sightDistance = 8;
+    AudioSource playAudio;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         monkSprite = gameObject.GetComponent<SpriteRenderer>();
+        playAudio = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -21,6 +25,7 @@ public class EnemyMonkGeniusAI : MonoBehaviour
     {
         playerSight();
         getDirection();
+        constraint();
     }
 
     private void playerSight()
@@ -47,6 +52,13 @@ public class EnemyMonkGeniusAI : MonoBehaviour
         {
             looksRight = false;
             monkSprite.flipX = true;
+        }
+    }
+    private void constraint()
+    {
+        if (gameObject.transform.position.y < -21)
+        {
+            Destroy(gameObject);
         }
     }
 }

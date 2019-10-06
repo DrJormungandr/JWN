@@ -17,12 +17,19 @@ public class EnemyKnightGeniusAI : MonoBehaviour
     public float speed = 3;
     public float attackDelay = 0.1F;
     private float nextAttack = 2;
+    AudioSource playAudio;
+    public AudioClip uvidelShelupon;
+    public AudioClip udarilShelupon;
+    public AudioClip diedSound;
+    public AudioClip maslinuPoymal;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         knightAnim = gameObject.GetComponent<Animator>();
         knightSprite = gameObject.GetComponent<SpriteRenderer>();
+        playAudio = GetComponent<AudioSource>();
 
     }
 
@@ -34,6 +41,7 @@ public class EnemyKnightGeniusAI : MonoBehaviour
         AttackPlayer();
         getDirection();
         Debug.Log(distanceFromPlayer.ToString());
+        constraint();
     }
 
     private void PlayerSight()
@@ -44,11 +52,18 @@ public class EnemyKnightGeniusAI : MonoBehaviour
             transform.Translate(toPlayer * Time.deltaTime * 2);
         }
     }
-
+    private void constraint()
+    {
+        if (gameObject.transform.position.y < -21)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void AttackPlayer()
     {
         if (distanceFromPlayer <= attackDistance)
         {
+            playAudio.PlayOneShot(udarilShelupon);
             offset = new Vector3(2, -0.2F, 0);
             if (looksRight)
             {
