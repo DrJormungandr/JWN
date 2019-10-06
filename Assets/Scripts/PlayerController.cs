@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public GameObject nothingAttackPrefab;
     public GameObject hurtbox;
     public Vector3 offset;
+    public int mana = 4 ;
+    public int maxMana = 4;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,9 +69,11 @@ public class PlayerController : MonoBehaviour
     private void RightClickOfDeath()
     {
 
-    //    Camera.main.ScreenToWorldPoint()
-        if (Input.GetButtonDown("Fire2"))
+        //    Camera.main.ScreenToWorldPoint()
+        
+        if (Input.GetButtonDown("Fire2") && mana >0)
         {
+            mana -= 1;
             Instantiate(nothingAttackPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), nothingAttackPrefab.transform.rotation);
         }
     }

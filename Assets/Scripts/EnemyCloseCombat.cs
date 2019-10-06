@@ -24,10 +24,10 @@ public class EnemyCloseCombat : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             otherRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            otherRb.AddForce(new Vector2(5, 3), ForceMode2D.Impulse);
+            otherRb.AddForce(new Vector2(20, 25), ForceMode2D.Impulse);
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             enemyHealth.health -= damage;
 
