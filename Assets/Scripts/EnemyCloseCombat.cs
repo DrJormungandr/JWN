@@ -7,10 +7,11 @@ public class EnemyCloseCombat : MonoBehaviour
     // Start is called before the first frame update
     public int damage = 1;
     private Rigidbody2D otherRb;
+    PlayerController playerController;
 
     void Start()
     {
-
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,8 @@ public class EnemyCloseCombat : MonoBehaviour
             otherRb.AddForce(new Vector2(20, 25), ForceMode2D.Impulse);
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             playerHealth.health -= damage;
+            playerController.gotDamaged = true;
+
 
         }
     }

@@ -17,12 +17,24 @@ public class PlayerController : MonoBehaviour
     public Vector3 offset;
     public int mana = 4 ;
     public int maxMana = 4;
+    public bool isDead = false;
+    public bool gotDamaged = false;
+    AudioSource playAudio;
+    public AudioClip deathSound;
+    public AudioClip jumpSound;
+    public AudioClip swordAttackSound;
+    public AudioClip voidAttackSound;
+    public AudioClip maslinuPoymalSound;
+
+
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnim = GetComponent<Animator>();
+        playAudio = GetComponent<AudioSource>();
+        gotDamaged = false;
     }
 
     // Update is called once per frame
@@ -34,6 +46,9 @@ public class PlayerController : MonoBehaviour
         jump();
         RightClickOfDeath();
         CloseCombat();
+        CheckPlayerDeath();
+        CheckGotDamaged();
+        constraint();
     }
 
    private void playerDirection(float direction)
@@ -57,13 +72,23 @@ public class PlayerController : MonoBehaviour
 
     private void jump()
     {
+
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
+            playAudio.PlayOneShot(jumpSound);
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("jumpAction");
         }
       
+    }
+
+    private void constraint()
+    {
+        if (gameObject.transform.position.y < -21)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void RightClickOfDeath()
@@ -73,6 +98,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetButtonDown("Fire2") && mana >0)
         {
+            playAudio.PlayOneShot(voidAttackSound);
             mana -= 1;
             Instantiate(nothingAttackPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), nothingAttackPrefab.transform.rotation);
         }
@@ -83,6 +109,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetButtonDown("Fire1"))
         {
+            playAudio.PlayOneShot(swordAttackSound);
             offset = new Vector3(2, -0.2F, 0);
             if (LooksRight)
             {
@@ -122,5 +149,20 @@ public class PlayerController : MonoBehaviour
             playerSprite.flipX = false;
             LooksRight = false;
         }
+    }
+
+    public void CheckPlayerDeath()
+    {
+        if (isDead){
+            playAudio.PlayOneShot(deathSound);
+        }
+    }
+    public void CheckGotDamaged()
+    {
+        if (gotDamaged == true)
+        {
+            playAudio.PlayOneShot(maslinuPoymalSound);
+        }
+        gotDamaged = false;
     }
 }
