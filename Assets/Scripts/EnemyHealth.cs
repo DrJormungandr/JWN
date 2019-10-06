@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
         {
             if (PlayerStats.mana < PlayerStats.maxMana)
             {
-                PlayerStats.mana += 1;
+                PlayerStats.mana += 2;
             }
                 Destroy(gameObject);
         }
