@@ -25,7 +25,8 @@ public class EnemyMonkGeniusAI : MonoBehaviour
         Debug.Log(distanceFromPlayer.ToString());
         Vector3 awayFromPlayer = new Vector3(transform.position.x - player.transform.position.x, transform.position.y);
 
-        if (distanceFromPlayer < sightDistance);
+        if (distanceFromPlayer < sightDistance)
+
         {
             transform.Translate(awayFromPlayer * Time.deltaTime * speed);
         }
