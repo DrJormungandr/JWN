@@ -46,11 +46,11 @@ public class DeleteOnClick : MonoBehaviour
     }
     //private void PaintItBlack()
  //   {
-        //  Vector3 hitPosition = Vector3.zero;
-        //Vector3 hitPosition = new Vector3 (gameObject.GetComponent<BoxCollider2D>().S, gameObject.transform.position.y,0);
+     //     Vector3 hitPosition = Vector3.zero;
+     //   Vector3 hitPosition = new Vector3 (gameObject.GetComponent<BoxCollider2D>().S, gameObject.transform.position.y,0);
 
-        //      hitPosition.x = hit.x - 0.01f * hit.normal.x;
-        //      hitPosition.y = hit.y - 0.01f * hit.normal.y;
- //       NothingTilemap.SetTile(NothingTilemap.WorldToCell(hitPosition), nothingTile);
-  //  }
+//              hitPosition.x = hit.x - 0.01f * hit.normal.x;
+ //             hitPosition.y = hit.y - 0.01f * hit.normal.y;
+   //     NothingTilemap.SetTile(NothingTilemap.WorldToCell(hitPosition), nothingTile);
+    //}
 }
