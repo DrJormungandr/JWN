@@ -18,8 +18,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (health < 1)
         {
-            enemyAnim.SetTrigger("death");
             Destroy(gameObject);
+            enemyAnim.SetTrigger("death");
         }
     }
     
