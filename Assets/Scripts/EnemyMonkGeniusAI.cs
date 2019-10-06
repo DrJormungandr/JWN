@@ -30,5 +30,7 @@ public class EnemyMonkGeniusAI : MonoBehaviour
         {
             transform.Translate(awayFromPlayer * Time.deltaTime * speed);
         }
+
+
     }
 }
