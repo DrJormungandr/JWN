@@ -23,7 +23,7 @@ public class EnemyMonkGeniusAI : MonoBehaviour
         float distanceFromPlayer = Mathf.Abs(player.transform.position.x - transform.position.x);
         Debug.Log(distanceFromPlayer.ToString());
         Vector3 awayFromPlayer = new Vector3(transform.position.x - player.transform.position.x, transform.position.y);
-        if (distanceFromPlayer < 8)
+        if (distanceFromPlayer < 13)
         {
             transform.Translate(awayFromPlayer * Time.deltaTime * 2);
         }
