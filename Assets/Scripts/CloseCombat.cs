@@ -7,11 +7,10 @@ public class CloseCombat : MonoBehaviour
     // Start is called before the first frame update
     public int damage = 1;
     private Rigidbody2D otherRb;
-    private PlayerController PlayerStats;
+
 
     void Start()
     {
-        PlayerStats = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -32,6 +31,7 @@ public class CloseCombat : MonoBehaviour
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             enemyHealth.health -= damage;
             
+           
             
 
         }
