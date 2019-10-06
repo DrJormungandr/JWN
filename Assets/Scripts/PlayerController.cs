@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         CheckPlayerDeath();
         CheckGotDamaged();
         constraint();
+        restart();
     }
 
    private void playerDirection(float direction)
@@ -101,6 +102,13 @@ public class PlayerController : MonoBehaviour
             playAudio.PlayOneShot(voidAttackSound);
             mana -= 1;
             Instantiate(nothingAttackPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), nothingAttackPrefab.transform.rotation);
+        }
+    }
+
+    void restart() {
+       if ( Input.GetKeyDown(KeyCode.R))
+        {
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 
