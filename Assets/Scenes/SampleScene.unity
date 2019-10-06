@@ -441,6 +441,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &23464701
 Animator:
   serializedVersion: 3
@@ -1354,6 +1358,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &98070974
 Animator:
   serializedVersion: 3
@@ -5758,6 +5766,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &526521362
 Animator:
   serializedVersion: 3
@@ -6586,6 +6598,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &613417763
 Animator:
   serializedVersion: 3
@@ -13112,6 +13128,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!114 &652104993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13393,6 +13413,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &663965676
 Animator:
   serializedVersion: 3
@@ -14016,6 +14040,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &704844729
 Animator:
   serializedVersion: 3
@@ -14575,6 +14603,13 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   mana: 4
   maxMana: 4
+  isDead: 0
+  gotDamaged: 0
+  deathSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 5cbbd06dc8c5485429bee78f47c26089, type: 3}
+  swordAttackSound: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  voidAttackSound: {fileID: 8300000, guid: 3637ffbdc7672f1479ea3628effe876b, type: 3}
+  maslinuPoymalSound: {fileID: 0}
 --- !u!212 &778426227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14647,7 +14682,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 778426225}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 362135302f250124196cebbe5f6a8c1a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -15623,6 +15658,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &926792760
 Animator:
   serializedVersion: 3
@@ -16465,6 +16504,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &1003517361
 Animator:
   serializedVersion: 3
@@ -30721,6 +30764,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &1177759536
 Animator:
   serializedVersion: 3
@@ -31010,6 +31057,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &1185211709
 Animator:
   serializedVersion: 3
@@ -78813,6 +78864,10 @@ MonoBehaviour:
   attackDistance: 2
   speed: 3
   attackDelay: 1
+  uvidelShelupon: {fileID: 0}
+  udarilShelupon: {fileID: 8300000, guid: 8625784c7b9bf28409d291037d6f0c96, type: 3}
+  diedSound: {fileID: 0}
+  maslinuPoymal: {fileID: 0}
 --- !u!95 &1936305405
 Animator:
   serializedVersion: 3
