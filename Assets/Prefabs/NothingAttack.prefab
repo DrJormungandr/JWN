@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3881985830495631251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.82, y: -7.97, z: -3.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialVelocity: {x: 1, y: 10}
+  nothingTile: {fileID: 11400000, guid: cbf8a0ecb36df824b9edf1308bff261e, type: 2}
 --- !u!50 &3881985830495631263
 Rigidbody2D:
   serializedVersion: 4

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    private PlayerController PlayerStats;
     public int health = 2;
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerStats = GameObject.Find("Player").GetComponent<PlayerController>();
+
     }
 
     // Update is called once per frame
@@ -16,7 +18,11 @@ public class EnemyHealth : MonoBehaviour
     {
         if (health < 1)
         {
-            Destroy(gameObject);
+            if (PlayerStats.mana < PlayerStats.maxMana)
+            {
+                PlayerStats.mana += 1;
+            }
+                Destroy(gameObject);
         }
     }
     
