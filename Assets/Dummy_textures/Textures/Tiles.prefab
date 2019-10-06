@@ -256,6 +256,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 3
       m_ColliderType: 1
+  - first: {x: -29, y: 0, z: 0}
+    second:
+      m_TileIndex: 66
+      m_TileSpriteIndex: 65
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -27, y: 0, z: 0}
     second:
       m_TileIndex: 65
@@ -327,6 +336,15 @@ Tilemap:
       m_TileColorIndex: 26
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 3
+      m_ColliderType: 1
+  - first: {x: -13, y: 0, z: 0}
+    second:
+      m_TileIndex: 67
+      m_TileSpriteIndex: 66
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: -7, y: 0, z: 0}
     second:
@@ -813,6 +831,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: e8a8de761835519488bf35fa8db48a6a, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 010b60a3ee0ce1045971ce706e42d323, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a339a36a019893540abc5bbf455f6081, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 54ea5dda7c084f24796e2a81eb8012db, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 0}
@@ -944,8 +966,12 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 249796a9c2894a9498d896c8398e5e59, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 7f8f7e734924ac8429cecaee6c0cfdd2, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: b950a82c7f81e434ab3d86aedaace4b7, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: d401432b62d5ab845a0bfb48b83d3141, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 66
+  - m_RefCount: 68
     m_Data:
       e00: 1
       e01: 0
@@ -964,7 +990,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 37
+  - m_RefCount: 39
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.8124524, g: 0.3895425, b: 0.42182326, a: 1}
