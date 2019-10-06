@@ -22,7 +22,6 @@ public class EnemyMonkGeniusAI : MonoBehaviour
     private void playerSight()
     {
         float distanceFromPlayer = Mathf.Abs(player.transform.position.x - transform.position.x);
-        Debug.Log(distanceFromPlayer.ToString());
         Vector3 awayFromPlayer = new Vector3(transform.position.x - player.transform.position.x, 0);
 
         if (distanceFromPlayer < sightDistance)

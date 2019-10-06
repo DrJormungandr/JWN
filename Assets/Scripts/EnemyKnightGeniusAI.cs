@@ -6,19 +6,23 @@ public class EnemyKnightGeniusAI : MonoBehaviour
 {
     private GameObject player;
     private Animator knightAnim;
+    private SpriteRenderer knightSprite;
     private Vector3 offset;
     public GameObject hurtbox;
-    bool looksRight;
+    bool looksRight = true;
     private float distanceFromPlayer;
+    public float attackRate = 3;
     public float sightDistance = 8;
-    public float attackDistance = 2;
+    public float attackDistance = 3;
     public float speed = 3;
-    private float attackDelay = 1;
+    public float attackDelay = 0.1F;
+    private float nextAttack = 2;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         knightAnim = gameObject.GetComponent<Animator>();
+        knightSprite = gameObject.GetComponent<SpriteRenderer>();
 
     }
 
@@ -27,15 +31,17 @@ public class EnemyKnightGeniusAI : MonoBehaviour
     {
         distanceFromPlayer = Mathf.Abs(player.transform.position.x - transform.position.x);
         PlayerSight();
+        AttackPlayer();
+        getDirection();
+        Debug.Log(distanceFromPlayer.ToString());
     }
 
     private void PlayerSight()
     {
-        Debug.Log(distanceFromPlayer.ToString());
-        Vector3 awayFromPlayer = new Vector3(transform.position.x + player.transform.position.x, 0);
+        Vector3 toPlayer = new Vector3(player.transform.position.x - transform.position.x, 0);
         if (distanceFromPlayer < sightDistance)
         {
-            transform.Translate(awayFromPlayer * Time.deltaTime * 2);
+            transform.Translate(toPlayer * Time.deltaTime * 2);
         }
     }
 
@@ -54,12 +60,37 @@ public class EnemyKnightGeniusAI : MonoBehaviour
             }
 
             offset = gameObject.transform.position - offset;
-            if (Time.time > 1)
+
+            if (Time.time > nextAttack)
             {
-                Instantiate(hurtbox, (offset), gameObject.transform.rotation);
+                knightAnim.SetTrigger("attackAction");
+
+                StartCoroutine(AttackDelayCoroutine());
+                nextAttack = Time.time + attackRate;
             }
-            knightAnim.SetTrigger("attackAction");
+
         }
+    }
+
+    private void getDirection()
+    {
+        if (player.transform.position.x - transform.position.x > 0)
+        {
+            looksRight = true;
+            knightSprite.flipX = false;
+
+
+        }
+        if (player.transform.position.x - transform.position.x < 0)
+        {
+            looksRight = false;
+            knightSprite.flipX = true;
+        }
+    }
+
+    IEnumerator AttackDelayCoroutine(){
+        yield return new WaitForSeconds(attackDelay);
+        Instantiate(hurtbox, (offset), gameObject.transform.rotation);
     }
 }
 
