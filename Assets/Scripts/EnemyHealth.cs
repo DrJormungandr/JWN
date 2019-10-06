@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 2;
+    private Animator enemyAnim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (health < 1)
         {
+            enemyAnim.SetTrigger("death");
             Destroy(gameObject);
         }
     }
